@@ -1,0 +1,4 @@
+mkdocs-material
+mkdocs-include-markdown-plugin
+mkdocs-jupyter
+mkdocstrings
