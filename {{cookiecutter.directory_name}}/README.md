@@ -9,7 +9,7 @@ For setup, you need to do the following things:
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/{{cookiecutter.user_name}}/{{cookiecutter.user_name}}.git
+    git clone https://github.com/{{cookiecutter.user_name}}/{{cookiecutter.directory_name}}.git
     ```
 
 2. Install the local packages
