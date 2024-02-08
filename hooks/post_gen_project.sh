@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "${0%/*}/.."
+cd {{cookiecutter.directory_name}}
 pip install -e .[dev]
 
 pre-commit install
