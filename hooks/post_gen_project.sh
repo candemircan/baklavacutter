@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git init
 pip install -e .[dev]
 
 pre-commit install
