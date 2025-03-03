@@ -1,0 +1,21 @@
+[project]
+name = "{{cookiecutter.directory_name}}"
+version = "0.0.1"
+dependencies = [
+    "transformers[torch]",
+    "seaborn",
+    "fastcore",
+    "natsort",
+    "wasabi",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4", "pre-commit==4.1.0", "ruff"]
+
+
+[tool.setuptools]
+py-modules = ["{{cookiecutter.directory_name}}"]
+
+[tool.ruff]
+line-length = 200
+lint.ignore = ["E731", "E501", "E701", "F403", "F405"]
