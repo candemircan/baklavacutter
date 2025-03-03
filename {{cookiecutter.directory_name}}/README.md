@@ -18,16 +18,8 @@ For setup, you need to do the following things:
     pip install .
     ```
 
-3. Define environment variables.
-    You need to define `{{cookiecutter.directory_name | upper}}_DIR` as an environment variable, so that the code can find the relevant data and files. You can do this by running the following lines in your terminal:
 
-    ```bash
-    export {{cookiecutter.directory_name | upper}}_DIR=/PATH/TO/{{cookiecutter.directory_name | upper}}
-    ```
-
-    or put the same lines in a file that is run during your session startup (e.g. `~/.bashrc`)
-
-    Note: I am using Python {{cookiecutter.python_version}}, not sure about the compatability with other versions.
+Note: I am using Python {{cookiecutter.python_version}}, not sure about the compatability with other versions.
 
 ## Folder Structure
 
