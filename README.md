@@ -1,6 +1,6 @@
-# baklavacutter_lowsugar
+# baklavacutter
 
-An easy to setup cookiecutter template for my research projects.
+> An easy to setup cookiecutter template for projects.
 
 Run the following command to create a new project:
 ```bash
