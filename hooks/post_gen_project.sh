@@ -1,9 +1,17 @@
 #!/bin/bash
 
 git init
-uv venv .{{cookiecutter.directory_name}} -p python{{cookiecutter.python_version}}
-source .{{cookiecutter.directory_name}}/bin/activate
-uv pip install -e .[dev] --no-cache
+uv venv -p python{{cookiecutter.python_version}}
+source .venv/bin/activate
+uv pip install -e .[dev]
 
 pre-commit install
 pre-commit run --all-files
+
+# add example* to .gitignore
+echo "example*" >> .gitignore
+
+# this is really only for my workflow
+if [ "{{cookiecutter.user_name}}" != "candemircan" ]; then
+    rm make_disposable_env.sh
+fi
