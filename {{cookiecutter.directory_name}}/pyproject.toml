@@ -4,7 +4,7 @@ version = "0.0.1"
 dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.4", "pre-commit==4.1.0", "ruff", "ipykernel", "ipywidgets"]
+dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets"]
 
 
 [tool.setuptools]
