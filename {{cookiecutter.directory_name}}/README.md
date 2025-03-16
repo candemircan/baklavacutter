@@ -1,6 +1,6 @@
 # {{cookiecutter.directory_name}}
 
-> Project description goes here.
+> {{cookiecutter.project_description}}
 
 ## Setup
 
@@ -28,7 +28,7 @@ For setup, you need to do the following things:
     ```
 
 
-Note: I am using Python {{cookiecutter.python_version}}, not sure about the compatability with other versions.
+Note: This project is using Python version {{cookiecutter.python_version}}
 
 ## Folder Structure
 
