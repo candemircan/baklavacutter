@@ -1,5 +1,5 @@
 [project]
-name = "{{cookiecutter.directory_name}}"
+name = "{{cookiecutter.project_name}}"
 version = "0.0.1"
 dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
 
@@ -8,7 +8,7 @@ dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets"]
 
 
 [tool.setuptools]
-py-modules = ["{{cookiecutter.directory_name}}"]
+py-modules = ["{{cookiecutter.project_name}}"]
 
 [tool.ruff]
 line-length = 200
