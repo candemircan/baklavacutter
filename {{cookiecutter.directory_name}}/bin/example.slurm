@@ -28,6 +28,10 @@ while [[ $# -gt 0 ]]; do
         shift # past argument
         shift # past value
         ;;
+    --greetings)
+        GREETINGS=true
+        shift # past argument
+        ;;
     *) # unknown option
         echo "Unknown option: $1"
         exit 1
