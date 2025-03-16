@@ -15,9 +15,15 @@ For setup, you need to do the following things:
 2. Install the local packages
     ```bash
     cd {{cookiecutter.directory_name}}
-    # if you have uv
+    ```
+
+    If you have uv installed, run the following command:
+    ```bash
     uv pip install .
-    # if you don't have uv
+    ```
+
+    Otherwise, use pip:
+    ```bash
     pip install .
     ```
 
