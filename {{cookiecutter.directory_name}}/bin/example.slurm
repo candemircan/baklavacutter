@@ -41,7 +41,7 @@ done
 
 source .venv/bin/activate
 
-CMD="python -m {{cookiecutter.project_name}}.example --source_model \"${SOURCE_MODEL}\" --layer_no \"${LAYER_NO}\" --head_no \"${HEAD_NO}\""
+CMD="python -m {{cookiecutter.directory_name}}.example --source_model \"${SOURCE_MODEL}\" --layer_no \"${LAYER_NO}\" --head_no \"${HEAD_NO}\""
 
 
 if [ "$GREETINGS" = true ]; then
