@@ -5,7 +5,7 @@ dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi
 
 [project.optional-dependencies]
 dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets"]
-
+linux = ["flash-attn; sys_platform == 'linux'"]
 
 [tool.setuptools]
 py-modules = ["{{cookiecutter.directory_name}}"]
@@ -13,3 +13,5 @@ py-modules = ["{{cookiecutter.directory_name}}"]
 [tool.ruff]
 line-length = 200
 lint.ignore = ["E731", "E501", "E701"]
+
+[project.optional-dependencies]

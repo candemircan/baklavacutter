@@ -6,4 +6,5 @@ source .{{cookiecutter.directory_name}}/bin/activate
 uv pip install --upgrade pip
 cd /lustre/groups/hcai/workspace/can.demircan/{{cookiecutter.directory_name}}
 uv pip install -e '.[dev]'
+uv pip install --no-build-isolation '.[linux]'
 pre-commit install
