@@ -3,7 +3,7 @@
 git init
 uv venv -p python{{cookiecutter.python_version}}
 source .venv/bin/activate
-uv pip install -e .[dev]
+uv pip install -e '.[dev]'
 uv pip install --no-build-isolation '.[linux]'
 
 pre-commit install
