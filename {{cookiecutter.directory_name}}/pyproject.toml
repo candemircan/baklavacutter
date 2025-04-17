@@ -4,8 +4,8 @@ version = "0.0.1"
 dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets"]
-linux = ["flash-attn; sys_platform == 'linux'"]
+dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets", "notebook"]
+linux = ["flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
 
 [tool.setuptools]
 py-modules = ["{{cookiecutter.directory_name}}"]
