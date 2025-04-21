@@ -1,11 +1,10 @@
 [project]
 name = "{{cookiecutter.directory_name}}"
 version = "0.0.1"
-dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
+dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi","flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pre-commit", "ruff", "ipykernel", "ipywidgets", "notebook"]
-linux = ["flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
+dev = ["pytest", "pre-commit", "ruff","notebook"]
 
 [tool.setuptools]
 py-modules = ["{{cookiecutter.directory_name}}"]
@@ -13,5 +12,3 @@ py-modules = ["{{cookiecutter.directory_name}}"]
 [tool.ruff]
 line-length = 200
 lint.ignore = ["E731", "E501", "E701"]
-
-[project.optional-dependencies]
