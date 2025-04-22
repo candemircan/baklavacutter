@@ -1,10 +1,11 @@
 [project]
 name = "{{cookiecutter.directory_name}}"
 version = "0.0.1"
-dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi","flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
+dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pre-commit", "ruff","notebook"]
+linux = ["flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
 
 [tool.setuptools]
 py-modules = ["{{cookiecutter.directory_name}}"]
