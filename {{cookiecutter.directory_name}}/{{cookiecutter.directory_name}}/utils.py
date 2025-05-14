@@ -1,4 +1,4 @@
-__all__ = ["show_info", "empy_acc_cache"]
+__all__ = ["show_info", "empty_acc_cache"]
 
 from typing import List
 
