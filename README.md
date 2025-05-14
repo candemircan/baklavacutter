@@ -1,6 +1,6 @@
 # baklavacutter
 
-> Opinionated template for new research projects
+> research project template
 
 First, install [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html) if you don't have it.
 
