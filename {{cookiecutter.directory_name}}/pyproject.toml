@@ -13,3 +13,4 @@ py-modules = ["{{cookiecutter.directory_name}}"]
 [tool.ruff]
 line-length = 200
 lint.ignore = ["E731", "E501", "E701", "E702", "F403"]
+lint.extend-select = ["I"]
