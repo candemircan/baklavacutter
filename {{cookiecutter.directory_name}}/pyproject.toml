@@ -1,7 +1,7 @@
 [project]
 name = "{{cookiecutter.directory_name}}"
 version = "0.0.1"
-dependencies = ["transformers[torch]", "seaborn", "fastcore", "natsort", "wasabi"]
+dependencies = ["transformers[torch]", "seaborn", "fastcore"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pre-commit", "ruff","notebook"]

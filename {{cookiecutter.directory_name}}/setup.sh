@@ -15,9 +15,9 @@ fi
 if [[ "$1" == "--disposable" ]]; then
     export TMPDIR=/localscratch/
     cd /localscratch/
-    $CREATE_VENV .notexture
-    source .notexture/bin/activate
-    cd /lustre/groups/hcai/workspace/can.demircan/notexture
+    $CREATE_VENV .{{cookiecutter.directory_name}}
+    source .{{cookiecutter.directory_name}}/bin/activate
+    cd /lustre/groups/hcai/workspace/can.demircan/{{cookiecutter.directory_name}}
 else
     $CREATE_VENV .venv
     source .venv/bin/activate
