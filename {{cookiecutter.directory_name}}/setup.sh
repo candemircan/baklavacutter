@@ -3,11 +3,12 @@
 # Check if uv is available
 if command -v uv &> /dev/null; then
     echo "Using uv for environment setup"
-    CREATE_VENV="uv venv -p 3.12"
+    CREATE_VENV="uv venv -p {{cookiecutter.python_version}}"
     INSTALL_PIP="uv pip install"
+    export UV_TORCH_BACKEND=auto
 else
     echo "uv not found, falling back to venv and pip"
-    CREATE_VENV="python3.12 -m venv"
+    CREATE_VENV="python{{cookiecutter.python_version}} -m venv"
     INSTALL_PIP="pip install"
 fi
 
@@ -26,3 +27,8 @@ fi
 $INSTALL_PIP -e '.[dev]'
 $INSTALL_PIP --no-build-isolation '.[linux]'
 pre-commit install
+pre-commit run --all-files
+
+# add example* to .gitignore
+echo "example*" >> .gitignore
+
