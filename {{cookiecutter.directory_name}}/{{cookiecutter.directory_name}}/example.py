@@ -1,6 +1,5 @@
 from fastcore.script import call_parse
 
-from .utils import show_info
 
 
 @call_parse
@@ -10,4 +9,4 @@ def main(
     head_no: int = 0,  # head to extract
     greetings: bool = False,  # do you send greetings?
 ):
-    show_info(list(locals().keys()), list(locals().values()))
+    pass
