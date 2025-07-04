@@ -40,6 +40,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 source .venv/bin/activate
+if ! command -v uv &> /dev/null
+then
+    pip install -e .
+else
+    uv pip install -e .
+fi
 
 CMD="python -m {{cookiecutter.directory_name}}.example --source_model \"${SOURCE_MODEL}\" --layer_no \"${LAYER_NO}\" --head_no \"${HEAD_NO}\""
 
