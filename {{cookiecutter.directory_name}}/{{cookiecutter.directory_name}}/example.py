@@ -1,7 +1,5 @@
 from fastcore.script import call_parse
 
-
-
 @call_parse
 def main(
     source_model: str = "gpt2",  # model to run
