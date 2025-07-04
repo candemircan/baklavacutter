@@ -8,7 +8,7 @@
 #SBATCH --output logs/%j
 #SBATCH --time=00:15:00
 
-GREETINGS=false
+GREETINGS=""
 
 while [[ $# -gt 0 ]]; do
     key="$1"
@@ -29,7 +29,7 @@ while [[ $# -gt 0 ]]; do
         shift # past value
         ;;
     --greetings)
-        GREETINGS=true
+        GREETINGS="--greetings"
         shift # past argument
         ;;
     *) # unknown option
@@ -47,11 +47,4 @@ else
     uv pip install -e .
 fi
 
-CMD="python -m {{cookiecutter.directory_name}}.example --source_model \"${SOURCE_MODEL}\" --layer_no \"${LAYER_NO}\" --head_no \"${HEAD_NO}\""
-
-
-if [ "$GREETINGS" = true ]; then
-    CMD="$CMD --greetings"
-fi
-
-eval "$CMD"
+python -m {{cookiecutter.directory_name}}.example --source_model "${SOURCE_MODEL}" --layer_no "${LAYER_NO}" --head_no "${HEAD_NO}" ${GREETINGS}
