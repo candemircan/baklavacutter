@@ -19,8 +19,8 @@ fi
 
 export UV_TORCH_BACKEND=auto
 uv venv -p {{cookiecutter.python_version}}
-uv sync --all-extras
 source .venv/bin/activate
+uv sync --all-extras
 pre-commit install
 pre-commit run --all-files
 
