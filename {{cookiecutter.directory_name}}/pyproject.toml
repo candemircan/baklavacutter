@@ -1,6 +1,6 @@
 [project]
 name = "{{cookiecutter.directory_name}}"
-requires-python = "==^{{cookiecutter.python_version}}"
+requires-python = "^{{cookiecutter.python_version}}"
 version = "0.0.1"
 dependencies = ["transformers[torch]", "seaborn", "fastcore", "flash-attn; sys_platform == 'linux'"]
 
