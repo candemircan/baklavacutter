@@ -1,34 +1,26 @@
 #!/bin/bash
 
-# Check if uv is available
-if command -v uv &> /dev/null; then
-    echo "Using uv for environment setup"
-    CREATE_VENV="uv venv -p {{cookiecutter.python_version}}"
-    INSTALL_PIP="uv pip install"
-    export UV_TORCH_BACKEND=auto
+# Check if uv is installed
+if command -v uv >/dev/null 2>&1; then
+    echo "uv is already installed."
+
+# If uv is not installed, try to install it
+elif command -v curl >/dev/null 2>&1; then
+    echo "installing uv using curl..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+elif command -v wget >/dev/null 2>&1; then
+    echo "installing uv using wget..."
+    wget -qO- https://astral.sh/uv/install.sh | sh
 else
-    echo "uv not found, falling back to venv and pip"
-    CREATE_VENV="python{{cookiecutter.python_version}} -m venv"
-    INSTALL_PIP="pip install"
+    echo "error: neither curl nor wget is installed. please install one to continue or install uv yourself before carrying on" >&2
+    exit 1
 fi
 
-# Check if --disposable flag is provided
-if [[ "$1" == "--disposable" ]]; then
-    export TMPDIR=/localscratch/
-    cd /localscratch/
-    $CREATE_VENV .{{cookiecutter.directory_name}}
-    source .{{cookiecutter.directory_name}}/bin/activate
-    cd /lustre/groups/hcai/workspace/can.demircan/{{cookiecutter.directory_name}}
-else
-    $CREATE_VENV .venv
-    source .venv/bin/activate
-fi
-
-$INSTALL_PIP -e '.[dev]'
-$INSTALL_PIP --no-build-isolation '.[linux]'
+export UV_TORCH_BACKEND=auto
+uv sync --all-extras
+source .venv/bin/activate
 pre-commit install
 pre-commit run --all-files
 
-# add example* to .gitignore
-echo "example*" >> .gitignore
 
+echo -e "\nexample*" >> .gitignore

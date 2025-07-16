@@ -1,16 +1,31 @@
 [project]
 name = "{{cookiecutter.directory_name}}"
+requires-python = "=={{python_version}}"
 version = "0.0.1"
-dependencies = ["transformers[torch]", "seaborn", "fastcore"]
+dependencies = ["transformers[torch]", "seaborn", "fastcore", "flash-attn; sys_platform == 'linux'"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pre-commit", "ruff","notebook"]
-linux = ["flash-attn; sys_platform == 'linux'", "vllm; sys_platform == 'linux'"]
+dev = ["pytest", "pre-commit", "ruff","ipykernel", "jupyter-cache"]
 
 [tool.setuptools]
-py-modules = ["{{cookiecutter.directory_name}}"]
+packages = ["{{cookiecutter.directory_name}}"]
+
+[build-system]
+requires = ["uv_build>=0.7.21,<0.8.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+no-build-isolation-package = ["flash-attn"]
+
+[tool.uv.build-backend]
+module-name = "{{cookiecutter.directory_name}}"
+module-root = ""
 
 [tool.ruff]
 line-length = 200
 lint.ignore = ["E731", "E501", "E701", "E702", "F403"]
 lint.extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+extra-standard-library = ["tomllib"]
+known-third-party = ["wandb"]
