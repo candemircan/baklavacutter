@@ -16,7 +16,7 @@ else
     exit 1
 fi
 
-
+unset VIRTUAL_ENV
 export UV_TORCH_BACKEND=auto
 uv sync --all-extras
 source .venv/bin/activate
