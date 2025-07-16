@@ -16,11 +16,9 @@ else
     exit 1
 fi
 
-# if a venv is active, deactivate it
-if [[ -n "$VIRTUAL_ENV" ]]; then
-    deactivate
-fi
+
 export UV_TORCH_BACKEND=auto
+uv venv -p {{cookiecutter.python_version}}
 uv sync --all-extras
 source .venv/bin/activate
 pre-commit install
