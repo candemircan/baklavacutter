@@ -16,12 +16,8 @@ else
     exit 1
 fi
 
-unset VIRTUAL_ENV
 export UV_TORCH_BACKEND=auto
+uv sync --no-install-package flash-attn
 uv sync --all-extras
-source .venv/bin/activate
-pre-commit install
-pre-commit run --all-files
-
-
-echo -e "\nexample*" >> .gitignore
+uv run pre-commit install
+uv run pre-commit run --all-files

@@ -7,4 +7,4 @@ def main(
     head_no: int = 0,  # head to extract
     greetings: bool = False,  # do you send greetings?
 ):
-    pass
+    print(f"{source_model} layer {layer_no} head {head_no} sends {"greetings" if greetings else "no greetings"}!")
