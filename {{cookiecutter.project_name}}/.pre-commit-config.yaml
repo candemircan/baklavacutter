@@ -16,5 +16,5 @@ repos:
       language: system
       entry: bash bin/run_tests.sh
       types: [ python ]
-      files: ^{{cookiecutter.directory_name}}/.*\.py$
+      files: ^{{cookiecutter.project_name}}/.*\.py$
       pass_filenames: true

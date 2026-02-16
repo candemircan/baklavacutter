@@ -1,5 +1,5 @@
 [project]
-name = "{{cookiecutter.directory_name}}"
+name = "{{cookiecutter.project_name}}"
 requires-python = "=={{cookiecutter.python_version}}"
 version = "0.0.1"
 dependencies = [
@@ -22,7 +22,7 @@ dev = [
 cuda = ["flash-attn"]
 
 [tool.setuptools]
-packages = ["{{cookiecutter.directory_name}}"]
+packages = ["{{cookiecutter.project_name}}"]
 
 [build-system]
 requires = ["uv_build>=0.7.21,<0.8.0"]
@@ -33,7 +33,7 @@ no-build-isolation-package = ["flash-attn"]
 default-groups = ["dev"]
 
 [tool.uv.build-backend]
-module-name = "{{cookiecutter.directory_name}}"
+module-name = "{{cookiecutter.project_name}}"
 module-root = ""
 
 [tool.ruff.lint.isort]
