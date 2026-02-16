@@ -2,10 +2,20 @@
 name = "{{cookiecutter.directory_name}}"
 requires-python = "=={{cookiecutter.python_version}}"
 version = "0.0.1"
-dependencies = ["transformers[torch]", "einops", "seaborn", "fastcore", "flash-attn; sys_platform == 'linux'"]
+dependencies = [
+  "transformers[torch]",
+  "einops",
+  "seaborn",
+  "fastcore",
+  "pre-commit",
+  "ipykernel",
+  "nbclassic",
+  "ruff",
+  "ipdb"
+]
 
 [project.optional-dependencies]
-dev = ["pre-commit", "ruff","nbclassic"]
+cuda = ["flash-attn"]
 
 [tool.setuptools]
 packages = ["{{cookiecutter.directory_name}}"]
@@ -24,3 +34,7 @@ module-root = ""
 [tool.ruff.lint.isort]
 extra-standard-library = ["tomllib"]
 known-third-party = ["wandb"]
+
+[tool.ruff.lint]
+ignore = ["E701"]
+
