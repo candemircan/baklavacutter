@@ -40,7 +40,8 @@ The project follows the coding conventions below, most of which come from fastai
 - **No Boilerplate**: Do not write exceptions or verbose debugging/info prints (e.g., no "model loaded").
 - **Manual Layout**: Do not use auto-formatters (ruff/black/yapf). Do not reformat existing code when editing it. Manual layout for domain clarity is intentional.
 - **Comments**: Only for "why", not "how". No comments for each line.
-- **Fastcore**: Use `call_parse` for CLIs and `docments` for documentation.
+- **Fastcore**: Use `docments` only for `@call_parse` CLI functions. For all other functions, use Google-style docstrings. Never mix both in one function.
+- **Tensor Documentation**: Always include shape notation in the docstring, e.g., `X (torch.Tensor): Input batch (batch, observation, feature)`.
 
 ### Symbol Naming
 - **Aggressive Abbreviations**: Used for short-lived symbols (list comps, lambdas, local helpers).
@@ -52,6 +53,7 @@ The project follows the coding conventions below, most of which come from fastai
 - **Width**: ~160 characters.
 - **One Idea per Line**: One semantic idea per line.
 - **Single-line constructs**: `if x: y`, ternary operators `x = a if b else c`, and short `def` bodies on the same line are encouraged.
+- **Signature Layout**: Only break to multiple lines if the signature exceeds ~100 characters.
 - **Vertical Space**: Minimize vertical space. No empty lines between similar short functions.
 - **Alignment**: Align conceptually similar statement parts to highlight differences.
 
