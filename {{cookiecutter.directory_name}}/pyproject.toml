@@ -7,6 +7,10 @@ dependencies = [
   "einops",
   "seaborn",
   "fastcore",
+]
+
+[dependency-groups]
+dev = [
   "pre-commit",
   "ipykernel",
   "nbclassic",
@@ -26,6 +30,7 @@ build-backend = "uv_build"
 
 [tool.uv]
 no-build-isolation-package = ["flash-attn"]
+default-groups = ["dev"]
 
 [tool.uv.build-backend]
 module-name = "{{cookiecutter.directory_name}}"
