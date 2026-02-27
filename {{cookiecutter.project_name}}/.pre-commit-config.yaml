@@ -8,7 +8,7 @@ repos:
       pass_filenames: false
     - id: ruff
       name: ruff
-      entry: uv run ruff check --fix --select F401,I .
+      entry: uv run ruff check --fix .
       language: system
       pass_filenames: false
     - id: tests

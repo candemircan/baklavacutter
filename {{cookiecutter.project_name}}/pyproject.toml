@@ -41,6 +41,10 @@ module-root = ""
 extra-standard-library = ["tomllib"]
 known-third-party = ["wandb"]
 
+[tool.ruff]
+line-length = 160
+
 [tool.ruff.lint]
-ignore = ["E701"]
+select = ["F401", "I"]
+ignore = ["E701", "E501"]
 
